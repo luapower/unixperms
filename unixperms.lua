@@ -80,10 +80,9 @@ local function long(mode)
 end
 
 local function format(mode, style)
-	style = style or 'o'
 	return
-		style == 'o' and octs(mode)
-		or style == 'l' and long(mode)
+		(not style or style:find'^o') and octs(mode)
+		or style:find'^l' and long(mode)
 end
 
 if not ... then
