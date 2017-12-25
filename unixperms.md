@@ -8,7 +8,7 @@ tagline: UNIX permissions strings
 
 Parse a unix permissions string and return its binary value. The string
 can be an octal number beginning with a `'0'`, or a specification of form
-`'[ugosStT]*[-+=]?[rwx]+ ...'`. `is_relative` is `true` if the permissions
+`'[ugo]*[-+=]?[rwxsStT]+ ...'`. `is_relative` is `true` if the permissions
 do not modify the entire mask of the `base`, eg. `'+x'` (i.e. `'ugo+x'`) says
 "add the execute bit for all" and it's thus a relative spec, while `'rx'`
 (i.e. `'ugo=rx'`) says "set the read and execute bits for all" and it's thus
